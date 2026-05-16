@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quant Marketing Brief — May 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #16130d;
+  --ink-soft: #3a342a;
+  --paper: #f4ede0;
+  --paper-warm: #ebe1cc;
+  --rule: #16130d;
+  --accent: #8b1e1e;
+  --accent-soft: #a64545;
+  --muted: #6b6253;
+  --highlight: #d4c08a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', 'Times New Roman', serif;
+  font-weight: 400;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse at top, rgba(212, 192, 138, 0.15) 0%, transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(22, 19, 13, 0.012) 2px, rgba(22, 19, 13, 0.012) 3px);
+  min-height: 100vh;
+}
+
+.container { max-width: 820px; margin: 0 auto; padding: 54px 44px 90px; }
+
+/* MASTHEAD */
+.masthead { border-top: 4px double var(--ink); border-bottom: 1px solid var(--ink); padding: 22px 0 16px; margin-bottom: 4px; position: relative; }
+.masthead-top { display: flex; justify-content: space-between; align-items: center; font-family: 'Inter Tight', sans-serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 16px; }
+.masthead-top .vol { font-weight: 600; }
+.masthead h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: clamp(42px, 6.4vw, 78px); line-height: 0.92; letter-spacing: -0.035em; font-variation-settings: "opsz" 144; text-align: center; margin: 0; }
+.masthead h1 em { font-style: italic; font-weight: 300; color: var(--accent); }
+.masthead-bottom { border-top: 1px solid var(--ink); margin-top: 16px; padding-top: 11px; display: flex; justify-content: space-between; font-family: 'Inter Tight', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+
+/* AT A GLANCE */
+.glance { background: var(--paper-warm); border: 1px solid var(--ink); padding: 32px 38px; margin: 52px 0 56px; position: relative; }
+.glance::before { content: ""; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border: 1px solid var(--ink); pointer-events: none; }
+.glance-label { font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+.glance h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 16px; font-style: italic; }
+.glance p { font-size: 14px; line-height: 1.6; color: var(--ink-soft); }
+.glance p::first-letter { font-size: 36px; font-weight: 700; float: left; line-height: 0.85; padding: 5px 7px 0 0; color: var(--accent); font-family: 'Fraunces', serif; }
+
+/* SECTION DIVIDER */
+.section-divider { display: flex; align-items: center; margin: 52px 0 36px; gap: 16px; }
+.section-divider .line { flex: 1; height: 1px; background: var(--ink); }
+.section-divider .label { font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); }
+.section-divider .ornament { color: var(--accent); font-size: 13px; }
+
+/* TOC */
+.toc { margin-bottom: 64px; padding: 24px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.toc-label { font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; text-align: center; }
+.toc-list { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 32px; list-style: none; }
+.toc-list li { display: flex; align-items: baseline; font-family: 'Fraunces', serif; font-size: 13px; padding: 3px 0; }
+.toc-list .num { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; color: var(--accent); margin-right: 10px; letter-spacing: 0.05em; }
+.toc-list .dots { flex: 1; border-bottom: 1px dotted var(--muted); margin: 0 7px; transform: translateY(-3px); }
+.toc-list a { color: var(--ink); text-decoration: none; transition: color 0.2s; }
+.toc-list a:hover { color: var(--accent); }
+.toc-list .page { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); }
+
+/* ARTICLES */
+.article { margin-bottom: 60px; position: relative; }
+.article-meta { display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--ink); padding-bottom: 9px; margin-bottom: 20px; }
+.article-meta .num { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 10px; }
+.article-meta .category { letter-spacing: 0.25em; }
+.article h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(24px, 3vw, 30px); line-height: 1.12; letter-spacing: -0.022em; margin-bottom: 18px; font-variation-settings: "opsz" 144; }
+.article h3 em { font-style: italic; font-weight: 400; color: var(--accent); }
+.article-body { font-size: 15px; line-height: 1.65; color: var(--ink); margin-bottom: 18px; }
+.article-body p + p { margin-top: 14px; text-indent: 1.4em; }
+.article-body strong { font-weight: 700; background: linear-gradient(transparent 60%, rgba(212, 192, 138, 0.5) 60%); padding: 0 2px; }
+
+.research-hook { border-left: 2px solid var(--accent); padding: 7px 0 7px 20px; margin: 20px 0; font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+.research-hook::before { content: "Research angle"; display: block; font-family: 'Inter Tight', sans-serif; font-style: normal; font-size: 8px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 5px; }
+
+.further-reading { margin-top: 16px; padding: 14px 18px; background: rgba(139, 30, 30, 0.04); border: 1px solid rgba(139, 30, 30, 0.18); font-size: 12.5px; }
+.further-reading-label { font-family: 'Inter Tight', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; display: block; }
+.further-reading .paper-title { font-family: 'Fraunces', serif; font-style: italic; color: var(--ink); font-size: 13px; line-height: 1.45; }
+.further-reading .paper-cite { font-family: 'Inter Tight', sans-serif; font-size: 11px; color: var(--muted); display: block; margin-top: 3px; }
+.further-reading a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.further-reading a:hover { border-bottom-color: var(--accent); }
+
+.sources { margin-top: 14px; padding: 14px 18px; background: rgba(22, 19, 13, 0.04); border-left: 3px solid var(--ink); font-size: 12px; }
+.sources-label { font-family: 'Inter Tight', sans-serif; font-size: 8px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px; display: block; }
+.sources ul { list-style: none; }
+.sources li { font-family: 'Inter Tight', sans-serif; font-size: 11.5px; line-height: 1.55; margin-bottom: 5px; padding-left: 13px; position: relative; color: var(--ink-soft); }
+.sources li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-size: 9px; top: 2px; }
+.sources a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; word-break: break-all; }
+.sources a:hover { border-bottom-color: var(--accent); }
+
+/* COLOPHON */
+.colophon { margin-top: 72px; padding-top: 32px; border-top: 4px double var(--ink); text-align: center; }
+.colophon-ornament { font-size: 14px; color: var(--accent); margin-bottom: 16px; letter-spacing: 0.4em; }
+.colophon h4 { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: 16px; margin-bottom: 12px; color: var(--ink); }
+.colophon p { font-family: 'Inter Tight', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+.colophon .sig { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink); margin-top: 18px; }
+
+@media (max-width: 640px) {
+  .container { padding: 28px 18px 56px; }
+  .toc-list { grid-template-columns: 1fr; }
+  .glance { padding: 22px 20px; }
+  .glance p::first-letter { font-size: 32px; }
+  .article h3 { font-size: 22px; }
+  .article-body { font-size: 14px; }
+  .masthead h1 { font-size: 40px; }
+}
+@media print { body { background: white; } .container { padding: 20px; } a { color: var(--ink) !important; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="vol">Vol. I · No. 1</span>
+      <span>Berkeley · Haas</span>
+      <span>$22.22</span>
+    </div>
+    <h1>The Quant<br><em>Marketing</em> Brief</h1>
+    <div class="masthead-bottom">
+      <span>Saturday</span>
+      <span>16 May 2026</span>
+      <span>Ten Items</span>
+    </div>
+  </header>
+
+  <section class="glance">
+    <span class="glance-label">— At a Glance —</span>
+    <h2>What the day asks you to notice.</h2>
+    <p>Luxury growth is 80% price-driven and McKinsey calls 2026 a "recalibration" year. The Row and Phoebe Philo crystallize the quiet-luxury countersignal. Kering Q1 is down 6.2%; Hermès grew 5.6% but missed; Tapestry's cap nearly matches Kering's. NBER's "Ads as Cues" (Bordalo et al.) reframes advertising as memory rather than utility. Two 2026 causal-ML frameworks (Marmonier-Aranda; Ho-Lam) push CATE estimation on marketing ROI. McKinsey flags AI shopping agents and generative-engine optimization as a structural disruption. Bold maximalism is rebounding against quiet luxury, a clean Veblen-Bourdieu tension. Deloitte reports 68% of luxury firms now offer repair, 54% pre-owned — sustainability reframed as margin. HBR documents LLMs mis-categorizing brands at scale. And new arXiv work on "Cultural Encoding" in LLMs shows a 30-point gap in brand recommendations between Chinese and international models.</p>
+  </section>
+
+  <nav class="toc">
+    <div class="toc-label">In This Issue</div>
+    <ol class="toc-list">
+      <li><span class="num">I</span><a href="#item-1">Luxury's recalibration year</a><span class="dots"></span><span class="page">strategy</span></li>
+      <li><span class="num">II</span><a href="#item-2">The logo-free elite</a><span class="dots"></span><span class="page">signaling</span></li>
+      <li><span class="num">III</span><a href="#item-3">Kering, Hermès, Tapestry</a><span class="dots"></span><span class="page">markets</span></li>
+      <li><span class="num">IV</span><a href="#item-4">Ads as memory cues</a><span class="dots"></span><span class="page">methods</span></li>
+      <li><span class="num">V</span><a href="#item-5">Causal ML for ROI</a><span class="dots"></span><span class="page">methods</span></li>
+      <li><span class="num">VI</span><a href="#item-6">AI shopping agents</a><span class="dots"></span><span class="page">frontier</span></li>
+      <li><span class="num">VII</span><a href="#item-7">Maximalism vs. quiet luxury</a><span class="dots"></span><span class="page">signaling</span></li>
+      <li><span class="num">VIII</span><a href="#item-8">Resale as margin lever</a><span class="dots"></span><span class="page">structure</span></li>
+      <li><span class="num">IX</span><a href="#item-9">LLMs miscategorize brands</a><span class="dots"></span><span class="page">frontier</span></li>
+      <li><span class="num">X</span><a href="#item-10">Cultural encoding in LLMs</a><span class="dots"></span><span class="page">methods</span></li>
+    </ol>
+  </nav>
+
+  <div class="section-divider">
+    <div class="line"></div><span class="ornament">✦</span><div class="label">Section One · Industry</div><span class="ornament">✦</span><div class="line"></div>
+  </div>
+
+  <article class="article" id="item-1">
+    <div class="article-meta"><span class="num">No. I</span><span class="category">Strategy</span><span>State of Fashion 2026</span></div>
+    <h3>Luxury's <em>recalibration</em> year: trust, not price, is the lever.</h3>
+    <div class="article-body">
+      <p>McKinsey and BoF's tenth annual State of Fashion finds <strong>80% of 2023–2025 luxury growth came from price hikes rather than volume</strong>. The aspirational middle-class consumer has been effectively priced out, and a generation of accessible local challengers in China (Laopu Gold, Songmont) is filling the gap with credible craftsmanship at lower price points.</p>
+      <p>McKinsey's Gemma D'Auria frames 2026 as "recalibration" driven by what she calls a "breach of trust." Her sharper claim is regional: creativity and innovation matter strongly in China but weakly in Europe — meaning a single global brand-positioning strategy now leaks utility on both ends. Margins, not growth, are the operative variable for executives this year.</p>
+    </div>
+    <div class="research-hook">A natural setting for a structural demand model with a latent trust state, or a Bayesian-persuasion framing of price-as-quality-signal that backfires when the signal grows too loud for too long. The cross-regional heterogeneity in creativity-as-driver is itself a publishable finding if you can formalize it.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Han, Nunes & Drèze (2010), "Signaling Status with Luxury Goods: The Role of Brand Prominence"</span>
+      <span class="paper-cite">Journal of Marketing, 74(4), 15–30. The foundational taxonomy of brand-prominence-by-consumer-type — directly relevant to how aspirational consumers being priced out reshapes signaling equilibria. <a href="https://journals.sagepub.com/doi/10.1509/jmkg.74.4.015">journals.sagepub.com</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Business of Fashion — "Luxury Fashion Is Rethinking Its Value to Shoppers" (State of Fashion 2026 report). <a href="https://www.businessoffashion.com/articles/luxury/the-state-of-fashion-2026-report-luxury-category-outlook-consumers/">businessoffashion.com</a></li>
+        <li>McKinsey — "What to expect in the global fashion industry in 2026". <a href="https://www.mckinsey.com/industries/retail/our-insights/what-to-expect-in-the-global-fashion-industry-in-2026">mckinsey.com</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-2">
+    <div class="article-meta"><span class="num">No. II</span><span class="category">Signaling</span><span>Quiet Luxury</span></div>
+    <h3>The Row, Phoebe Philo, and the <em>logo-free</em> elite.</h3>
+    <div class="article-body">
+      <p>Andrea Felsted (Bloomberg, via BoF) argues elite spenders are migrating from overexposed mega-brands toward understated, logo-free luxury. The Row and Philo are the canonical exemplars. This is countersignaling in textbook form: <strong>those highest in a property invest less in proving it</strong>, relying instead on in-group recognition.</p>
+      <p>The Bellezza & Berger (2020) "Distance" framework is useful here — high-status consumers can safely adopt low-status signals because their position is secure, while middle-status consumers must signal loudly. The Row's appeal is structurally the inverse of Gucci's. For a paper, this is unusually clean: succession events function as natural experiments on logo prominence.</p>
+    </div>
+    <div class="research-hook">An event study around designer succession or a structural model with three signaling types (low / middle / high), where the high type prefers signal absence. The empirical strategy practically writes itself once you have transactional data from a multi-brand retailer.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Feltovich, Harbaugh & To (2002), "Too Cool for School? Signaling and Countersignaling"</span>
+      <span class="paper-cite">RAND Journal of Economics, 33(4), 630–649. The foundational countersignaling paper. Read it once and you'll see the structure underneath every "quiet luxury" article you encounter for the next year. <a href="https://onlinelibrary.wiley.com/doi/abs/10.2307/3087478">wiley.com</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Business of Fashion — Luxury vertical, May 2026 dispatch. <a href="https://www.businessoffashion.com/topics/luxury/">businessoffashion.com/topics/luxury</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-3">
+    <div class="article-meta"><span class="num">No. III</span><span class="category">Markets</span><span>Q1 Earnings</span></div>
+    <h3>Kering Q1, Hermès Q1, and the <em>Tapestry–Kering</em> inversion.</h3>
+    <div class="article-body">
+      <p>Kering reported Q1 revenue of €3.57B (-6.2% YoY), with Gucci at €1.35B (-14.3%). Hermès posted €4.1B (+5.6%) but missed analyst expectations, citing Middle East disruption. BNP Paribas forecasts ~6% organic growth for the sector in 2026, with the US as the only region carrying both short- and medium-term positive catalysts.</p>
+      <p>The deeper signal is the Tapestry–Kering inversion: Coach's parent now trades at a market cap nearly matching Kering's. The market is pricing <strong>"accessible-premium with strong Gen Z affinity" comparably to traditional ultra-luxury</strong>. If that's right, brand-equity-vs.-market-cap divergences become a fertile dependent variable for a paper on what investors actually pay for in fashion conglomerates.</p>
+    </div>
+    <div class="research-hook">Build a hedonic regression of market cap on brand-attribute vectors (heritage, logo prominence, Gen-Z share, regional exposure). The residual is a measure of "narrative premium" — itself an interesting object to explain.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Simon & Sullivan (1993), "The Measurement and Determinants of Brand Equity: A Financial Approach"</span>
+      <span class="paper-cite">Marketing Science, 12(1), 28–52. The canonical paper on extracting brand equity from financial market data — methodologically right next to what you'd need for the Kering/Tapestry question. <a href="https://pubsonline.informs.org/doi/abs/10.1287/mksc.12.1.28">informs.org</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Penningtons Manches — "Fashion, luxury and lifestyle news aggregator – May 2026". <a href="https://www.penningtonslaw.com/insights/fashion-luxury-and-lifestyle-news-aggregator-may-2026/">penningtonslaw.com</a></li>
+        <li>Business of Fashion — Luxury landing (Tapestry vs. Kering valuation note). <a href="https://www.businessoffashion.com/topics/luxury/">businessoffashion.com/topics/luxury</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="section-divider">
+    <div class="line"></div><span class="ornament">✦</span><div class="label">Section Two · Methods</div><span class="ornament">✦</span><div class="line"></div>
+  </div>
+
+  <article class="article" id="item-4">
+    <div class="article-meta"><span class="num">No. IV</span><span class="category">Methods</span><span>NBER Working Paper</span></div>
+    <h3>Ads as <em>cues</em>: a memory-based theory of brand habit.</h3>
+    <div class="article-body">
+      <p>Bordalo, Burro, and co-authors (NBER WP 34387) develop a model in which advertising operates as a <strong>memory cue rather than a marginal-utility shifter</strong>. A Pepsi ad reminds Pepsi drinkers of Pepsi but reminds Coke drinkers of Coke — similarity reinforces habit and reduces cross-brand mobility precisely when products are most substitutable.</p>
+      <p>Two sharp empirical predictions follow: similar ads create negative spillovers via memory interference, and ad effectiveness scales with habit strength. Pairs naturally with Bronnenberg-Dubé's persistent brand-capital framework (NBER WP 22691) — together they form a candidate citation backbone for any branding paper you write in the next two years.</p>
+    </div>
+    <div class="research-hook">The prediction that ad similarity reinforces habits while reducing cross-brand mobility maps cleanly onto luxury, where category-level visual conventions are exceptionally strong (the campaign aesthetics of Saint Laurent vs. Celine vs. Bottega are convergent). A test using image embeddings to measure ad similarity could be original and tractable.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Bronnenberg & Dubé (2017), "The Formation of Consumer Brand Preferences"</span>
+      <span class="paper-cite">Annual Review of Economics, vol. 9, 353–382. The companion theoretical apparatus to Bordalo et al. — read together they cover the modern empirical literature on brand capital. <a href="https://www.nber.org/papers/w22691">nber.org/papers/w22691</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Bordalo et al., "Ads as Cues," NBER WP 34387. <a href="https://www.nber.org/system/files/working_papers/w34387/w34387.pdf">nber.org</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-5">
+    <div class="article-meta"><span class="num">No. V</span><span class="category">Methods</span><span>Causal ML</span></div>
+    <h3>Causal ML for marketing ROI: two <em>recent frameworks</em>.</h3>
+    <div class="article-body">
+      <p>Two early-2026 conference papers worth a methodological skim. Marmonier & Aranda (IDEAL 2025, Jan 2026) combine matching, IPW, and causal forests to estimate heterogeneous ATTs on campaign features. Ho & Lam (ICCIES 2026) propose a multi-stage Robust Causal Inference Framework using propensity-score estimation and causal meta-learners — S/T/X-Learner ensembles — to estimate CATE in direct marketing.</p>
+      <p>What's worth noticing: both are <strong>methodologically rigorous on the pre-treatment assumption</strong>, which is where most applied marketing work cuts corners. Ho-Lam explicitly excludes "call duration" as a leakage feature. If you want to publish quickly, the framework is a defensible template; if you want to publish well, pair it with a clean economic theory of why heterogeneity exists in your setting.</p>
+    </div>
+    <div class="research-hook">The literature is hungry for an application that combines meta-learner CATE with a theory of heterogeneity grounded in something other than demographics — e.g., past brand-relationship state, signaling type, or category-level habit strength à la Bordalo.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Wager & Athey (2018), "Estimation and Inference of Heterogeneous Treatment Effects Using Random Forests"</span>
+      <span class="paper-cite">Journal of the American Statistical Association, 113(523), 1228–1242. The foundational causal forest paper. Every applied CATE paper you'll read cites this; understanding the inference machinery is non-optional. <a href="https://arxiv.org/abs/1510.04342">arxiv.org/abs/1510.04342</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Marmonier & Aranda (2026), Springer / IDEAL. <a href="https://link.springer.com/chapter/10.1007/978-3-032-10489-2_43">link.springer.com</a></li>
+        <li>Ho & Lam (2026), Springer / ICCIES. <a href="https://link.springer.com/chapter/10.1007/978-3-032-21628-1_4">link.springer.com</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="section-divider">
+    <div class="line"></div><span class="ornament">✦</span><div class="label">Section Three · Frontier</div><span class="ornament">✦</span><div class="line"></div>
+  </div>
+
+  <article class="article" id="item-6">
+    <div class="article-meta"><span class="num">No. VI</span><span class="category">Frontier</span><span>AI & Discovery</span></div>
+    <h3>AI shopping agents as a <em>structural disruption</em>.</h3>
+    <div class="article-body">
+      <p>McKinsey's Anita Balchandani argues consumers are routing discovery through AI assistants, making <strong>"generative engine optimization" (GEO)</strong> a successor concept to SEO. The question is no longer how Google ranks you but how an LLM represents you. The disruption is more existential for multi-brand aggregators and platforms than for direct-to-consumer brands.</p>
+      <p>The implications are sharp and underexplored. If discovery shifts from a search-results page to a single LLM-generated recommendation, long-tail brand visibility collapses unless the LLM has been trained on rich, distinctive content about the brand. This is a research frontier with very little canonical theory yet — an opportunity for early entrants.</p>
+    </div>
+    <div class="research-hook">A first-mover paper could define the field's vocabulary. Audit how a frontier LLM recommends luxury items across structured prompts: are heritage brands over-recommended? Is recency biased? Is there a price-tier ceiling at which LLMs stop differentiating?</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Brand, Israeli & Ngwe (2023), "Using LLMs for Market Research"</span>
+      <span class="paper-cite">Harvard Business School Working Paper 23-062. Establishes how GPT-class models can be used to extract consumer preferences, and explicitly addresses the distributional structure of LLM responses — methodologically essential for any GEO/AI-discovery paper. <a href="https://www.hbs.edu/ris/Publication%20Files/23-062_6bfe7a5b-3ed9-4afd-a4c1-c91b60dd82e5.pdf">hbs.edu</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>McKinsey, "What to expect in the global fashion industry in 2026". <a href="https://www.mckinsey.com/industries/retail/our-insights/what-to-expect-in-the-global-fashion-industry-in-2026">mckinsey.com</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <div class="section-divider">
+    <div class="line"></div><span class="ornament">✦</span><div class="label">Section Four · Status & Structure</div><span class="ornament">✦</span><div class="line"></div>
+  </div>
+
+  <article class="article" id="item-7">
+    <div class="article-meta"><span class="num">No. VII</span><span class="category">Signaling</span><span>Aesthetic Polarity</span></div>
+    <h3>Maximalism's <em>commercial resurgence</em> vs. quiet luxury.</h3>
+    <div class="article-body">
+      <p>QArt Solutions' B2B data shows statement pieces and bold tailoring have moved from niche to core commercial priority in 2026, driven by Gen Z's <strong>$400B in identity-signaling spend</strong>. Alessandro Michele at Valentino, Jean Paul Gaultier's theatricality, and Comme des Garçons' sculptural excess all confirm the trajectory.</p>
+      <p>Set this against Item II (logo-free quiet luxury) and you have a textbook Bourdieu-Veblen tension: maximalism for the aspirational, minimalism for the secure elite. Same calendar year, opposite signaling strategies, segmented by consumer type. This is exactly the structure a formal two-type signaling model is built to capture.</p>
+    </div>
+    <div class="research-hook">A formal signaling model with two consumer types and observable-vs-unobservable luxury cues could publish well in QME or Marketing Science. Bonus: a Distinction-style empirical test using image embeddings of recent runway shows to quantify aesthetic dispersion across price tiers and consumer cohorts.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Bellezza, Gino & Keinan (2014), "The Red Sneakers Effect: Inferring Status and Competence from Signals of Nonconformity"</span>
+      <span class="paper-cite">Journal of Consumer Research, 41(1), 35–54. A modern empirical anchor for the idea that breaking aesthetic conventions can itself be a status move. Foundational for any quiet-vs-loud paper. <a href="https://academic.oup.com/jcr/article/41/1/35/1796071">academic.oup.com</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>QArt Solutions — "Bold Luxury Fashion Is Back" (May 2026). <a href="https://www.qartsolutions.com/post/bold-luxury-fashion-trends-2026">qartsolutions.com</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-8">
+    <div class="article-meta"><span class="num">No. VIII</span><span class="category">Structure</span><span>Circular Economy</span></div>
+    <h3>Resale, repair, and circularity as a <em>margin lever</em>.</h3>
+    <div class="article-body">
+      <p>Deloitte's 2026 Global Powers of Luxury reports <strong>68.3% of luxury fashion companies now offer repair/refurbishment, 53.8% run certified pre-owned programs, and 44.5% partner with resale platforms</strong>. Euromonitor reframes this as sustainability-as-ROI rather than sustainability-as-compliance — a meaningful shift in how brands rationalize the investment.</p>
+      <p>For Veblen goods, this is a non-trivial structural change. A controlled resale channel commits a brand to a credible secondary-market price, which feeds back into primary-market willingness-to-pay. The Birkin's price stability across primary and resale is itself a brand asset; what happens when that asset gets actively managed rather than emerging organically?</p>
+    </div>
+    <div class="research-hook">A two-period model with endogenous resale supply, where the brand chooses primary-market quantity and resale-channel participation jointly. The key tension: more resale availability increases primary-market access (good) but erodes scarcity (bad). The equilibrium balance is publishable.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Amaldoss & Jain (2005), "Conspicuous Consumption and Sophisticated Thinking"</span>
+      <span class="paper-cite">Management Science, 51(10), 1449–1466. A formal model of Veblen-good pricing under heterogeneous consumer sophistication — the natural baseline before introducing a resale channel. <a href="https://pubsonline.informs.org/doi/10.1287/mnsc.1050.0399">informs.org</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>FashionUnited — "5 key trends shaping luxury fashion sector in 2026". <a href="https://fashionunited.com/news/business/5-key-trends-shaping-luxury-fashion-sector-in-2026/2026031871262">fashionunited.com</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-9">
+    <div class="article-meta"><span class="num">No. IX</span><span class="category">Frontier</span><span>HBR · Agentic AI</span></div>
+    <h3>When LLMs <em>miscategorize</em> your brand.</h3>
+    <div class="article-body">
+      <p>Harvard Business Review (March 2026) reports that two-thirds of Gen Z and over half of Millennials are now using LLMs to research products. Pernod Ricard ran a formal audit of how leading models represented its brands and found <strong>systematic mis-categorization</strong> — Ballantine's, an affordable mass-market Scotch, was repeatedly classified as a prestige product.</p>
+      <p>This is the operationalization of Item VI. The empirical fact is that LLMs are now the medium of brand discovery for younger consumers, and they get the brand-tier mapping wrong in non-random ways. For luxury, this matters acutely: prestige is a positional good, and an LLM that flattens the prestige hierarchy reshapes consumer choice sets.</p>
+    </div>
+    <div class="research-hook">An audit study: for a representative basket of luxury and premium brands, ask a frontier LLM to (a) rank prestige, (b) recommend for an occasion, (c) estimate price. Compare to actual market prices and to expert-rated prestige. The distributional errors are the paper.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">Li, Zhang, Wang & Gao (2024), "Frontiers: Determining the Validity of Large Language Models for Automated Perceptual Analysis"</span>
+      <span class="paper-cite">Marketing Science, 43(4), 665–679. Tests whether LLMs can substitute for survey-based brand perception studies — directly relevant to any audit of LLM-mediated brand discovery. <a href="https://pubsonline.informs.org/doi/10.1287/mksc.2023.0454">informs.org</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>Harvard Business Review — "Preparing Your Brand for Agentic AI" (March 2026). <a href="https://hbr.org/2026/03/preparing-your-brand-for-agentic-ai">hbr.org</a></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="article" id="item-10">
+    <div class="article-meta"><span class="num">No. X</span><span class="category">Methods</span><span>arXiv · LLM Bias</span></div>
+    <h3>Cultural encoding and the <em>Existence Gap</em> in LLM brand discovery.</h3>
+    <div class="article-body">
+      <p>A recent arXiv paper introduces the concept of an "Existence Gap" — brands' absence from AI-generated recommendations due to insufficient presence in LLM training data. The empirical claim is striking: <strong>Chinese LLMs (Qwen3, DeepSeek, Doubao) recommend brands at 88.9%, vs. 58.3% for international LLMs (GPT, Claude, Gemini) on identical English-language queries</strong>. The gap is statistically robust (χ² = 226.60, p < .001).</p>
+      <p>This is a much harder problem than search engine bias. With search, you can theoretically buy your way in. With LLM training corpora, the brand is either present in the data moat or it isn't — and the asymmetry is locked in by training cycles. For luxury, where Western houses dominate Western corpora, this works in their favor; for emerging-market challenger brands, it's a structural barrier invisible to traditional market-entry analysis.</p>
+    </div>
+    <div class="research-hook">Two angles: (1) a descriptive paper quantifying the Existence Gap across categories and LLMs, (2) a strategic paper modeling firm investment in "training-data presence" as a new form of marketing capital — distinct from advertising but with similar persistence properties.</div>
+    <div class="further-reading">
+      <span class="further-reading-label">Further Reading</span>
+      <span class="paper-title">"Cultural Encoding in Large Language Models: The Existence Gap in AI-Mediated Brand Discovery" (2026)</span>
+      <span class="paper-cite">arXiv preprint 2601.00869. The source paper. Worth reading the methodology section closely — the audit-study design is reusable for many adjacent research questions. <a href="https://arxiv.org/pdf/2601.00869">arxiv.org/pdf/2601.00869</a></span>
+    </div>
+    <div class="sources">
+      <span class="sources-label">Sources</span>
+      <ul>
+        <li>arXiv 2601.00869 — "Cultural Encoding in Large Language Models". <a href="https://arxiv.org/pdf/2601.00869">arxiv.org</a></li>
+      </ul>
+    </div>
+  </article>
+
+</div>
+</body>
+</html>
